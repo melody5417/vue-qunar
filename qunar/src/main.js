@@ -1,8 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Router from './router/router.js'
+import fastClick from 'fastclick'
+import './assets/styles/reset.css'
+import	'./assets/styles/border.css'
 
 Vue.config.productionTip = false
+// 解决浏览器click事件300ms延迟的问题
+fastClick.attach(document.body)
 
 new Vue({
 	// es6 键和值相同可以省略 "键名:" 直接写 值
