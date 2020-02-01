@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
 	<!-- 显示当前路由地址所对应的内容 -->
 	<router-view></router-view>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'app',
 }
