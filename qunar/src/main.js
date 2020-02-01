@@ -2,8 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import Router from './router/router.js'
 import fastClick from 'fastclick'
-import './assets/styles/reset.css'
-import	'./assets/styles/border.css'
+import 'styles/reset.css'
+import	'styles/border.css'
+import	'styles/iconfont.css'
 
 Vue.config.productionTip = false
 // 解决浏览器click事件300ms延迟的问题
