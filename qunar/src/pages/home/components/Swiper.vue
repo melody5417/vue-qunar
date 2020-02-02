@@ -2,7 +2,7 @@
 	<div class="wrapper">
 		<swiper :options="swiperOption">
 			<swiper-slide v-for="item of swiperList" :key="item.id">
-				<img class="swiper-mg" :src="item.imgUrl">
+				<img class="swiper-img" :src="item.imgUrl">
 			</swiper-slide>
 			<div class="swiper-pagination"  slot="pagination"></div>
 		</swiper>
@@ -48,8 +48,7 @@
 		width 100%
 		height 31.25vw
 		background #CACACA
-		.swipe-img
-		// ？此处未充满 要怎么设置
+		.swiper-img
 			width 100%
 
 </style>
