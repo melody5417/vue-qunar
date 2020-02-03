@@ -92,6 +92,7 @@
 		width 100%
 		height 0
 		padding-bottom 50%
+		margin-top .2rem
 		background #42B983
 		.swiper-container
 			width 100%
@@ -125,6 +126,5 @@
 				line-height .44rem //文字上下居中
 				color $dartTextColor
 				text-align center
-				white-space nowrap
 				ellipsis()
 </style>
