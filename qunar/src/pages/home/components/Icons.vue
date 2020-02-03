@@ -37,11 +37,10 @@
 				bottom .44rem
 				right 0
 				box-sizing border-box
-				padding-bottom .1rem
+				padding .1rem
 				.icon-img-content
 					display block
-					margin 0 auto
-					height 100%
+					width 100%
 			.icon-desc
 				position absolute
 				left 0
