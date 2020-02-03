@@ -6,7 +6,7 @@
 					<div class="icon-img">
 						<img class="icon-img-content" :src="item.imgUrl" />
 					</div>
-					<p class="icon-desc">热门景点</p>
+					<p class="icon-desc">{{item.desc}}</p>
 				</div>
 			</swiper-slide>
 			<div class="swiper-pagination"  slot="pagination"></div>
@@ -30,7 +30,7 @@
 				iconList: [{
 					id: '0001',
 					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					desc: '景点门票'
+					desc: '景点门票景点门票景点门票景点门票'
 				}, {
 					id: '0002',
 					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
@@ -84,6 +84,9 @@
 
 <style lang="stylus" scoped>
 	@import '../../../assets/styles/variables.styl'
+	@import '~styles/mixins.styl'
+	.icons >>> .swiper-pagination-bullet-active
+		background: $bgColor
 	.icons
 		overflow hidden
 		width 100%
@@ -115,11 +118,13 @@
 					width 100%
 			.icon-desc
 				position absolute
-				left 0
-				right 0
+				left .1rem
+				right .1rem
 				bottom 0
 				height .44rem
 				line-height .44rem //文字上下居中
 				color $dartTextColor
 				text-align center
+				white-space nowrap
+				ellipsis()
 </style>
