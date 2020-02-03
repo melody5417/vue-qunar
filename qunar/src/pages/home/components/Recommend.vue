@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="recommend">
 		<div class="title">热销推荐</div>
 		<ul>
 			<li class="item border-bottom" v-for="item of recommendList" :key="item.id">
@@ -7,7 +7,9 @@
 				<div class="item-info">
 					<p class="item-title">{{item.title}}</p>
 					<p class="item-desc">{{item.desc}}</p>
-					<button class="item-button">查看详情</button>
+					<div class="item-button-wrapper">
+						<button class="item-button">查看详情</button>
+					</div>
 				</div>
 			</li>
 		</ul>
@@ -72,10 +74,11 @@
 			padding .1rem
 		.item-info
 			flex 1
+			width 0
 			padding .1rem
 			display flex
 			flex-direction column
-			min-width 0
+			background-color yellow
 			.item-title
 				line-height .54rem
 				font-size .32rem
@@ -87,13 +90,11 @@
 				text-align left
 				ellipsis()
 			.item-button
+				display block
 				line-height .44rem
-				width 1.9rem
 				margin-top .16rem
 				background-color #ff9300
 				padding 0 .2rem
 				border-radius .06rem
 				color #FFFFFF
-				
-		
 </style>
