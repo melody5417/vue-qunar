@@ -5,7 +5,6 @@
 		<home-icons :iconList="iconList"></home-icons>
 		<home-recommend :recommendList="recommendList"></home-recommend>
 		<home-weekend :weekendList="weekendList"></home-weekend>
-		<div>test</div>
 	</div>
 </template>
 
