@@ -18,35 +18,8 @@
 <script>
 	export default {
 		name: 'HomeWeekend',
-		data () {
-			return {
-				weekendList: [{
-					id: '0001',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					title: '大连海洋世界大连海洋世界大连海洋世界大连海洋世界大连海洋世界大连海洋世界',
-					desc: '与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏',
-				}, {
-					id: '0002',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					title: '大连海洋世界大连海洋世界大连海洋世界大连海洋世界大连海洋世界大连海洋世界',
-					desc: '与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏',
-				}, {
-					id: '0003',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					title: '大连海洋世界大连海洋世界大连海洋世界大连海洋世界大连海洋世界大连海洋世界',
-					desc: '与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏',
-				}, {
-					id: '0004',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					title: '大连海洋世界大连海洋世界大连海洋世界大连海洋世界大连海洋世界大连海洋世界',
-					desc: '与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏',
-				}, {
-					id: '0005',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					title: '大连海洋世界大连海洋世界大连海洋世界大连海洋世界大连海洋世界大连海洋世界',
-					desc: '与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏与动物嬉戏',
-				}]
-			}
+		props: {
+			weekendList: Array
 		}
 	}
 </script>

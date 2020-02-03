@@ -17,6 +17,9 @@
 <script>
 	export default {
 		name: 'HomeIcons',
+		props: {
+			iconList: Array
+		},
 		data () {
 			return {
 				// Swiper4的API文档 https://www.swiper.com.cn/api/loop/22.html
@@ -26,44 +29,7 @@
 						el: '.swiper-pagination',
 					},
 					loop: true
-				},
-				iconList: [{
-					id: '0001',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					desc: '景点门票景点门票景点门票景点门票'
-				}, {
-					id: '0002',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					desc: '景点门票'
-				}, {
-					id: '0003',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					desc: '景点门票'
-				}, {
-					id: '0004',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					desc: '景点门票'
-				}, {
-					id: '0005',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					desc: '景点门票'
-				}, {
-					id: '0006',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					desc: '景点门票'
-				}, {
-					id: '0007',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					desc: '景点门票'
-				}, {
-					id: '0008',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					desc: '景点门票'
-				}, {
-					id: '0009',
-					imgUrl: 'https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg',
-					desc: '景点门票'
-				}]
+				}
 			}
 		},
 		computed: {

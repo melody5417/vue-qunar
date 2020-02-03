@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper">
-		<swiper :options="swiperOption">
+		<swiper :options="swiperOption" v-if="showSwiper">
 			<swiper-slide v-for="item of swiperList" :key="item.id">
 				<img class="swiper-img" :src="item.imgUrl">
 			</swiper-slide>
@@ -12,6 +12,9 @@
 <script>
 	export default {
 		name: 'HomeSwiper',
+		props: {
+			swiperList: Array
+		},
 		data () {
 			return {
 				// Swiper4的API文档 https://www.swiper.com.cn/api/loop/22.html
@@ -23,14 +26,13 @@
 					loop: true,
 					autoplay: true,
 					delay: 200
-				},
-				swiperList: [{
-					id: '0001',
-					imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/316fb27c0e1ac2ee1996cbc5ec2d5b3f.jpg'
-				}, {
-					id: '0002',
-					imgUrl:	'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/99942c1e5b16f528723dd4c0fbf9c97c.jpg'
-				}]
+				}
+			}
+		},
+		// 模版代码里尽量减少逻辑代码
+		computed: {
+			showSwiper () {
+				return this.swiperList.length
 			}
 		}
 	}
