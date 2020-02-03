@@ -82,7 +82,7 @@
 				padding .1rem
 				.icon-img-content
 					display block
-					// margin 0 auto
+					margin 0 auto
 					max-width 100%
 					max-height 100%
 					width auto
