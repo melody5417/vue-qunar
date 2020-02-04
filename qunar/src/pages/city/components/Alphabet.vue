@@ -1,7 +1,13 @@
 <template>
-	<div class="list">
+	<div class="alphabet">
 		<ul>
-			<li class="item" v-for="item of list" :key="item">{{item}}</li>
+			<li 
+				class="item" 
+				v-for="item of list" 
+				:key="item"
+				@click="handleLetterClick">
+				{{item}}
+			</li>
 		</ul>
 	</div>
 </template>
@@ -11,12 +17,17 @@
 		name: "CityAlphabet",
 		props: {
 			list: Array
+		},
+		methods: {
+			handleLetterClick (event) {
+				this.$emit("change", event.target.innerText)
+			}
 		}
 	}
 </script>
 
 <style lang="stylus" scoped>
-	.list
+	.alphabet
 		overflow hidden
 		position absolute
 		top 2.8rem
