@@ -1,32 +1,30 @@
 <template>
-	<div class="list">
-		<div class="wrapper" ref='wrapper'>
-			<div class="content">
-				<div class="area">
-					<div class="title border-topbottom">当前城市</div>
-					<div class="button-list">
-						<div class="button-wrapper">
-							<div class="button">北京</div>
-						</div>
+	<div class="wrapper" ref='wrapper'>
+		<div class="content">
+			<div class="area">
+				<div class="title border-topbottom">当前城市</div>
+				<div class="button-list">
+					<div class="button-wrapper">
+						<div class="button">北京</div>
 					</div>
 				</div>
-				<div class="area">
-					<div class="title border-topbottom">热门城市</div>
-					<div class="button-list">
-						<div class="button-wrapper" v-for="item of hotCities" :key="item.id">
-							<div class="button">{{item.name}}</div>
-						</div>
+			</div>
+			<div class="area">
+				<div class="title border-topbottom">热门城市</div>
+				<div class="button-list">
+					<div class="button-wrapper" v-for="item of hotCities" :key="item.id">
+						<div class="button">{{item.name}}</div>
 					</div>
 				</div>
-				<div 
-					class="area" 
-					v-for="(item, key) of cities" 
-					:key="key"
-					:ref="key">
-					<div class="title border-topbottom">{{key}}</div>
-					<div class="item-list" v-for="inneritem of item" :key="inneritem.id">
-						<div class="item border-bottom">{{inneritem.name}}</div>
-					</div>
+			</div>
+			<div 
+				class="area" 
+				v-for="(item, key) of cities" 
+				:key="key"
+				:ref="key">
+				<div class="title border-topbottom">{{key}}</div>
+				<div class="item-list" v-for="inneritem of item" :key="inneritem.id">
+					<div class="item border-bottom">{{inneritem.name}}</div>
 				</div>
 			</div>
 		</div>
@@ -42,15 +40,22 @@
 			cities: Object,
 			letter: String
 		},
-		mounted () {
-			this.scroll = new BScroll(this.$refs.wrapper)
-		},
 		watch: {
 			letter () {
 				if (this.letter) {
+					console.log(this.letter)
 					const element = this.$refs[this.letter][0]
 					this.scroll.scrollToElement(element)
 				}
+			},
+			cities () {
+				// this.$nextTick可实现在 DOM 状态更新后，执行传入的方法。
+				this.$nextTick(() => {
+					if (!this.scroll) {
+						this.scroll = new BScroll(this.$refs.wrapper, {})
+						console.log(this.scroll)
+					}
+				})
 			}
 		}
 	}
