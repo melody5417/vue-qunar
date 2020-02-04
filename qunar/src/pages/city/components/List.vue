@@ -1,6 +1,6 @@
 <template>
-	<div class="list" ref='wrapper'>
-		<div>
+	<div class="list">
+		<div class="wrapper" ref='wrapper'>
 			<div class="area">
 					<div class="title border-topbottom">当前城市</div>
 					<div class="button-list">
@@ -63,37 +63,41 @@
 	.border-bottom
 		&::after
 			border-color #ccc
-	.list
-		overflow hidden
-		position absolute
-		top 2.8rem
-		right 0
-		bottom 0
-		left 0
-		background-color #FFFFFF
-		.title
-			line-height .44rem
-			background-color #eee
-			text-align left
-			padding-left .2rem
-			font-size .26rem
-			color #666
-		.button-list
-			padding .1rem .6rem .1rem .1rem
-			display flex
-			flex-flow row wrap
-			.button-wrapper
-				width 33%
-				flex none
-				.button
-					margin .1rem
-					padding .1rem 0
-					border .02rem solid #ccc
-					border-radius .1rem
-		.item-list
-			.item
-				line-height .76rem
-				padding-left .2rem
+	// .list
+	// 	position relative
+	// 	width 100%
+	// 	height 100%
+		.wrapper
+			overflow hidden
+			position absolute
+			top 2.8rem
+			right 0
+			bottom 0
+			left 0
+			background-color #FFFFFF
+			.title
+				line-height .44rem
+				background-color #eee
 				text-align left
-			
+				padding-left .2rem
+				font-size .26rem
+				color #666
+			.button-list
+				padding .1rem .6rem .1rem .1rem
+				display flex
+				flex-flow row wrap
+				.button-wrapper
+					width 33%
+					flex none
+					.button
+						margin .1rem
+						padding .1rem 0
+						border .02rem solid #ccc
+						border-radius .1rem
+			.item-list
+				.item
+					line-height .76rem
+					padding-left .2rem
+					text-align left
+				
 </style>
