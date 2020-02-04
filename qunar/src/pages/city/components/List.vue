@@ -1,7 +1,8 @@
 <template>
 	<div class="list">
 		<div class="wrapper" ref='wrapper'>
-			<div class="area">
+			<div class="content">
+				<div class="area">
 					<div class="title border-topbottom">当前城市</div>
 					<div class="button-list">
 						<div class="button-wrapper">
@@ -27,6 +28,7 @@
 						<div class="item border-bottom">{{inneritem.name}}</div>
 					</div>
 				</div>
+			</div>
 		</div>
 	</div>
 </template>
