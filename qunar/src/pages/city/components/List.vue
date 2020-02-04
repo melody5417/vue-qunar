@@ -127,6 +127,7 @@
 		right 0
 		bottom 0
 		left 0
+		background-color #FFFFFF
 		.title
 			line-height .44rem
 			background-color #eee
