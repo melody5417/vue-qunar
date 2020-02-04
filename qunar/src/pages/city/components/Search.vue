@@ -1,6 +1,6 @@
 <template>
-	<div class="search-page">
-		<div class="search">
+	<div class="search">
+		<div class="search-bar">
 			<input 
 				class="input" 
 				type="text" 
@@ -82,7 +82,7 @@
 
 <style lang="stylus" scoped>
 	@import '../../../assets/styles/variables.styl'
-	.search
+	.search-bar
 		height .72rem
 		padding 0 .1rem
 		background-color $bgColor
