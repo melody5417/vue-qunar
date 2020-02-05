@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="container" @click="handleGalleryClick">
 		<div class="wrapper">
 			<swiper :options="swiperOption">
 				<swiper-slide v-for="(item, index) of imgs" :key="index">
@@ -18,9 +18,7 @@
 			imgs: {
 				type: Array,
 				default () {
-					return ["https://static.runoob.com/images/demo/demo4.jpg",
-								"https://static.runoob.com/images/demo/demo4.jpg",
-								"https://static.runoob.com/images/demo/demo4.jpg"]
+					return []
 				}
 			}
 		},
@@ -31,9 +29,16 @@
 					// 如果需要分页器
 					pagination: {
 						el: '.swiper-pagination',
-						type: 'fraction',
-					}
+						type: 'fraction'
+					},
+					observer: true,
+					observeParents: true //当swiper的父元素变化时，swiper更新
 				}
+			}
+		},
+		methods: {
+			handleGalleryClick () {
+				this.$emit('close')
 			}
 		}
 	}
@@ -41,7 +46,7 @@
 
 <style lang="stylus" scoped>
 	.container >>> .swiper-container
-		overflow  visible
+		overflow: visible
 	.container
 		z-index 99
 		position fixed
@@ -54,7 +59,6 @@
 		flex-direction column
 		justify-content center
 		.wrapper
-			overflow  hidden
 			width 100%
 			height 0
 			padding-bottom 100%

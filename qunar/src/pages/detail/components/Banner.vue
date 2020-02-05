@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="banner">
+		<div class="banner" @click="handleBannerClick">
 			<img class="banner-img" src="https://static.runoob.com/images/demo/demo1.jpg" alt="">
 			<div class="banner-info">
 				<div class="banner-title">
@@ -12,8 +12,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="banner-gallery" v-show="showSwiper">
-			<gallery :imgs="images"></gallery>
+		<div 
+			class="banner-gallery" 
+			v-show="showGallery">
+			<gallery :imgs="images" @close="handleGalleryClose"></gallery>
 		</div>
 	</div>
 </template>
@@ -24,9 +26,13 @@
 		name: 'DetailBanner',
 		data () {
 			return {
-				images: ["https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg",
-							"https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg",
-							"https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg"]
+				images: ["https://static.runoob.com/images/demo/demo4.jpg",
+								"https://static.runoob.com/images/demo/demo4.jpg",
+								"https://static.runoob.com/images/demo/demo4.jpg",
+								"https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg",
+								"https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg",
+								"https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg"],
+				showGallery: false
 			}
 		},
 		components: {
@@ -34,7 +40,15 @@
 		},
 		computed : {
 			showSwiper () {
-				return this.images.length
+				return this.images.length && this.showGallery
+			}
+		},
+		methods: {
+			handleBannerClick () {
+				this.showGallery = true
+			},
+			handleGalleryClose() {
+				this.showGallery = false
 			}
 		}
 	}
