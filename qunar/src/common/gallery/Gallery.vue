@@ -28,9 +28,9 @@
 				swiperOption: {
 					// 如果需要分页器
 					pagination: {
-						el: '.swiper-pagination',
-						type: 'fraction'
+						el: '.swiper-pagination'
 					},
+					// type: 'fraction',
 					observer: true,
 					observeParents: true //当swiper的父元素变化时，swiper更新
 				}
@@ -45,8 +45,8 @@
 </script>
 
 <style lang="stylus" scoped>
-	.container >>> .swiper-container
-		overflow: visible
+	// .container >>> .swiper-container
+	// 	overflow: visible
 	.container
 		z-index 99
 		position fixed
@@ -58,13 +58,15 @@
 		display flex
 		flex-direction column
 		justify-content center
+		align-items center
 		.wrapper
+			overflow hidden
 			width 100%
 			height 0
 			padding-bottom 100%
 			.gallery-img
 				width 100%
+				margin auto 0
 			.swiper-pagination
 				color #FFFFFF
-				bottom -1rem
 </style>

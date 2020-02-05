@@ -1,18 +1,26 @@
 <template>
 	<div>
-		<banner></banner>
+		<detail-banner></detail-banner>
+		<keep-alive>
+			<detail-header></detail-header>
+		</keep-alive>
+		<div class="content"></div>
 	</div>
 </template>
 
 <script>
-	import Banner from './components/Banner.vue'
+	import DetailBanner from './components/Banner.vue'
+	import DetailHeader  from './components/Header.vue'
 	export default {
 		name: 'Detail',
 		components: {
-			Banner
+			DetailBanner,
+			DetailHeader
 		}
 	}
 </script>
 
 <style lang="stylus" scoped>
+	.content
+		height 50rem
 </style>
