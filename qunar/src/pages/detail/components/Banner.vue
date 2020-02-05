@@ -1,10 +1,10 @@
 <template>
 	<div>
 		<div class="banner" @click="handleBannerClick">
-			<img class="banner-img" src="https://static.runoob.com/images/demo/demo1.jpg" alt="">
+			<img class="banner-img" :src="bannerImg" alt="">
 			<div class="banner-info">
 				<div class="banner-title">
-					大连海洋世界
+				{{sightName}}
 				</div>
 				<div class="banner-number">
 					<span class="iconfont banner-icon"></span>
@@ -15,7 +15,7 @@
 		<div 
 			class="banner-gallery" 
 			v-show="showGallery">
-			<gallery :imgs="images" @close="handleGalleryClose"></gallery>
+			<gallery :imgs="gallaryImgs" @close="handleGalleryClose"></gallery>
 		</div>
 	</div>
 </template>
@@ -24,14 +24,13 @@
 	import Gallery from '../../../common/gallery/Gallery.vue'
 	export default {
 		name: 'DetailBanner',
+		props: {
+			sightName: String,
+			bannerImg: String,
+			gallaryImgs: Array
+		},
 		data () {
 			return {
-				images: ["https://static.runoob.com/images/demo/demo4.jpg",
-								"https://static.runoob.com/images/demo/demo4.jpg",
-								"https://static.runoob.com/images/demo/demo4.jpg",
-								"https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg",
-								"https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg",
-								"https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg"],
 				showGallery: false
 			}
 		},
@@ -40,7 +39,7 @@
 		},
 		computed : {
 			showSwiper () {
-				return this.images.length && this.showGallery
+				return this.gallaryImgs.length && this.showGallery
 			}
 		},
 		methods: {
