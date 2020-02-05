@@ -1,21 +1,42 @@
 <template>
-	<div class="banner">
-		<img class="banner-img" src="https://static.runoob.com/images/demo/demo1.jpg" alt="">
-		<div class="banner-info">
-			<div class="banner-title">
-				大连海洋世界
+	<div>
+		<div class="banner">
+			<img class="banner-img" src="https://static.runoob.com/images/demo/demo1.jpg" alt="">
+			<div class="banner-info">
+				<div class="banner-title">
+					大连海洋世界
+				</div>
+				<div class="banner-number">
+					<span class="iconfont banner-icon"></span>
+					19
+				</div>
 			</div>
-			<div class="banner-number">
-				<span class="iconfont banner-icon"></span>
-				19
-			</div>
+		</div>
+		<div class="banner-gallery" v-show="showSwiper">
+			<gallery :imgs="images"></gallery>
 		</div>
 	</div>
 </template>
 
 <script>
+	import Gallery from '../../../common/gallery/Gallery.vue'
 	export default {
-		name: 'DetailBanner'
+		name: 'DetailBanner',
+		data () {
+			return {
+				images: ["https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg",
+							"https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg",
+							"https://t1.hddhhn.com/uploads/tu/201812/622/484.jpg"]
+			}
+		},
+		components: {
+			Gallery
+		},
+		computed : {
+			showSwiper () {
+				return this.images.length
+			}
+		}
 	}
 </script>
 
@@ -36,7 +57,7 @@
 			display flex
 			justify-content center
 			align-items center
-			background-image linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8))
+			background-image linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8))
 			.banner-title
 				text-align left
 				flex 1
