@@ -32,7 +32,7 @@ export default new Router({
 			if (from.meta.lastPosition) {
 				from.meta.savedPosition = document.documentElement.scrollTop
 			}
-		return { x: 0, y: to.meta.savedPosition || 0 }
+			return { x: 0, y: to.meta.savedPosition || 0 }
 		}
 	}
 })

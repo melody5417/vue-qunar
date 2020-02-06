@@ -12,16 +12,19 @@
 				</div>
 			</div>
 		</div>
-		<div 
-			class="banner-gallery" 
-			v-show="showGallery">
-			<gallery :imgs="gallaryImgs" @close="handleGalleryClose"></gallery>
-		</div>
+		<fade-animation>
+			<div
+				class="banner-gallery" 
+				v-show="showGallery">
+				<gallery :imgs="gallaryImgs" @close="handleGalleryClose"></gallery>
+			</div>
+		</fade-animation>
 	</div>
 </template>
 
 <script>
 	import Gallery from '../../../common/gallery/Gallery.vue'
+	import FadeAnimation from	'../../../common/Animation/FadeAnimation.vue'
 	export default {
 		name: 'DetailBanner',
 		props: {
@@ -35,7 +38,8 @@
 			}
 		},
 		components: {
-			Gallery
+			Gallery,
+			FadeAnimation
 		},
 		computed : {
 			showSwiper () {
