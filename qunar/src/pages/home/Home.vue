@@ -37,6 +37,8 @@
 			getHomeInfo () {
 				axios.get('api/index.json')
 				.then(this.getHomeInfoSucc)
+				
+				// this.city = this.$store.state.city
 			},
 			getHomeInfoSucc (res) {
 				console.log(res)
