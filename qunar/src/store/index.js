@@ -3,9 +3,17 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+let defaultCity = '上海'
+try{
+	if (localStorage.city) {
+		defaultCity = localStorage.city
+	}
+}catch(e){
+	//TODO handle the exception
+}
 export default new Vuex.Store({
 	state: {
-		city: '上海'
+		city: defaultCity
 	},
 	actions: {
 		changeCity (ctx, city) {
@@ -19,6 +27,7 @@ export default new Vuex.Store({
 			console.log(state)
 			console.log(city)
 			state.city = city
+			localStorage.city = city
 		}
 	}
 })
