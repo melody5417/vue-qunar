@@ -51,7 +51,7 @@
 			text-align left
 			padding-left .2rem
 		.header-right
-			width: 1.24rem
+			min-width: 1.04rem
 			float: right
 			text-align: center
 			color #FFFFFF
