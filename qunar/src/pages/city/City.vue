@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="city" @touchstart.stop="handleTouchStart">
 		<city-header></city-header>
 		<city-search :cities="cities"></city-search>
 		<city-list :hotCities="hotCities" :cities="cities" :letter="letter"></city-list>
@@ -49,6 +49,9 @@
 			},
 			handleAlphabetClick (text) {
 				this.letter = text
+			},
+			handleTouchStart () {
+				console.log("touch start in city")
 			}
 		},
 		mounted () {
