@@ -1,0 +1,40 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    border: solid 1px;
+}
+
+#up {
+    height: 85px;
+}
+
+#down_root {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+#down_root_left {
+    width: 100px;
+}
+
+#down_root_right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#down_root_right_1 {
+    height: 88px;
+}
+
+#down_root_right_2 {
+    flex-grow: 1;
+}

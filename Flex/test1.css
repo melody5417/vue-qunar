@@ -1,0 +1,29 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.root {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.root div {
+    border: solid 1px;
+}
+
+#son1 {
+    height: 86px;
+}
+
+#son2 {
+    flex-grow: 1;
+}
+
+#son3 {
+    height: 56px;
+}
+

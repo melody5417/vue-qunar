@@ -1,0 +1,61 @@
+.root {
+    /*初始化容器*/
+    display: flex;
+
+    /*容器属性*/
+
+    /*方向 换行*/
+    /*写法1*/
+    /*flex-direction: row-reverse;*/
+    /*flex-wrap: wrap;*/
+    /*写法2*/
+    /*flex-flow: wrap row-reverse;*/
+
+    /*主轴 x 对齐*/
+    /*justify-content: center;*/
+
+    /*交叉轴 y 对齐*/
+    align-items: center;
+    height: 500px;
+    border: solid blue;
+
+    /*多行*/
+    /*align-content: flex-start;*/
+
+
+    /*子元素属性*/
+
+}
+
+.root div {
+    /*height: 50px;*/
+    width: 50px;
+    border: solid red 3px;
+}
+
+.big {
+    height: 100px;
+    fill: red;
+}
+
+#son0 {
+    /*指定排序 默认为0 不分配*/
+    /*order: 2;*/
+
+    /*对剩余空间分蛋糕 没有剩余空间则不分配 默认为0 不分配*/
+    /*flex-grow: 1;*/
+
+    /*空间不足时，是否缩小 默认为1压缩 0为死活不压缩*/
+    flex-shrink: 0;
+
+    flex-basis: 150px;
+}
+
+#son1 {
+    /*order: 1;*/
+    /*flex-grow: 2;*/
+}
+
+#son2 {
+    /*order: 2;*/
+}
